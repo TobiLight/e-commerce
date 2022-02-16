@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {}
+
+@layer components {
+    .navigation {
+        @apply bg-white shadow-md flex p-3 w-full;
+    }
+
+    .menu,
+    .cart {
+        @apply cursor-pointer;
+    }
+
+    .menu:hover,
+    .cart:hover {
+        @apply text-green-400;
+    }
+
+    .account {
+        @apply cursor-pointer;
+    }
+
+    ::placeholder {
+        @apply text-center;
+    }
+}
