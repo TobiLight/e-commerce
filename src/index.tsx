@@ -4,6 +4,7 @@ import App from './App';
 import './assets/style.css'
 import { BrowserRouter } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
+import 'animate.css';
 
 ReactDOM.render(
   <React.StrictMode>

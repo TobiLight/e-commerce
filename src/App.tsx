@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './assets/style.css'
-import { Navigation } from './Components/Navigation';
-import { SideMenu } from './Components/SideMenu';
+
+import { Homepage } from './Pages/Index';
+
+
+
 
 function App() {
-  const [showSideMenu, setShowSideMenu] = useState<boolean>(false)
   return (
-    <div className='relative'>
-      {showSideMenu && <SideMenu />}
-      <Navigation showSideMenu={() => setShowSideMenu(true)} />
-    </div>
+    <Routes>
+      <Route path="/" element={<Homepage />} />
+      {/* <Route path="/about" element={<p>Hello world</p>} /> */}
+    </Routes>
   );
 }
 

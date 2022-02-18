@@ -6,6 +6,7 @@ import AccountIcon from "./Icons/Profile"
 import SearchSharpIcon from "./Icons/Search"
 import ShoppingBag from "./Icons/ShoppingBag"
 import TelephoneIcon from "./Icons/Telephone"
+import { NavigationSearch } from "./Search"
 import { SideMenu } from "./SideMenu"
 
 type NavigationType = {
@@ -30,8 +31,7 @@ export const Navigation = ({ showSideMenu }: NavigationType): JSX.Element => {
 
                 <div className=" flex items-center gap-5">
                     <div className="hidden lg:block search relative">
-                        <input type="text" name="search" id="search" placeholder="Search item" className="px-4 rounded-full border-2 border-gray-600 h-[50px] w-[350px]" />
-                        <SearchSharpIcon className="w-6 h-6 absolute right-[17px] top-[15px]" />
+                        <NavigationSearch width="w-[220px]" />
                     </div>
                     <div className="account cursor-pointer">
                         <AccountIcon className="w-8 h-8" />
