@@ -15,6 +15,11 @@ export const Homepage = (): JSX.Element => {
                 <SideMenu closeSideMenu={() => setShowSideMenu(false)} />
             </div>
             <Navigation showSideMenu={() => setShowSideMenu(true)} />
+
+            {/* Hero section with slider */}
+            <div className="hero h-[450px]">
+
+            </div>
         </div>
     )
 }
