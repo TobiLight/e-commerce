@@ -16,7 +16,8 @@
     }
 
     .menu:hover,
-    .cart:hover {
+    .cart:hover,
+    .account:hover {
         @apply text-green-400;
     }
 
@@ -24,26 +25,43 @@
         @apply cursor-pointer;
     }
 
-@keyframes inAnimation {
-    0% {
-        opacity: 0;
-        visibility: hidden;
+    @keyframes inAnimation {
+        0% {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        100% {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
-    100% {
-        opacity: 1;
-        visibility: visible;
-    }
-}
+    @keyframes outAnimation {
+        0% {
+            opacity: 1;
+            background-color: '#000000a1';
+            transition-property: "opacity";
+            transition-duration: .5s;
+            transform: translate(-50%, -50%);
+        }
 
-@keyframes outAnimation {
-    0% {
-        opacity: 1;
+
+        100% {
+            width: 0px;
+            opacity: 0;
+            transition-property: "opacity";
+            transition-duration: .5s;
+            transform: translate(-50%, -50%);
+            visibility: hidden;
+        }
     }
 
-    100% {
-        opacity: 0;
-        visibility: hidden;
+    .breadcrumbs>a:after {
+        content: '/';
     }
-}
+
+    .breadcrumbs>a:nth-child(4)::after {
+        content: none;
+    }
 }

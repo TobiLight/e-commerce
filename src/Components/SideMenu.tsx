@@ -8,14 +8,15 @@ type SideMenuType = {
     // opened: boolean
     isOpen: boolean
     closeSideMenu: () => void | boolean
+    style?: React.CSSProperties
 }
 
-export const SideMenu = ({ isOpen, closeSideMenu }: SideMenuType): JSX.Element => {
+export const SideMenu = ({ isOpen, closeSideMenu, style }: SideMenuType): JSX.Element => {
     return (
         <>
             {
                 isOpen &&
-                <div className="w-[350px] bg-white h-full flex flex-col py-4 px-8">
+                <div style={style} className="w-[350px] bg-white h-full flex flex-col py-4 px-8">
                     <div className="flex justify-end mb-4">
                         <div className="cursor-pointer hover:text-green-400">
                             <CloseOutlineIcon onClick={closeSideMenu} className="w-8 h-8" />
@@ -23,16 +24,16 @@ export const SideMenu = ({ isOpen, closeSideMenu }: SideMenuType): JSX.Element =
                     </div>
                     <div className="flex flex-col justify-between h-full gap-8">
                         <div className="grid gap-12">
-                            <div className="flex justify-center mt-10">
+                            <div className="flex justify-center mt-10 lg:hidden">
                                 <NavigationSearch width="w-[280px]" />
                             </div>
 
-                            <div className="flex flex-col gap-1 text-xl font-semibold pl-3">
-                                <Link to="/">Women</Link>
-                                <Link to="/">Men</Link>
-                                <Link to="/">Kids</Link>
-                                <Link to="/">Home Deco</Link>
-                                <Link to="/">Contact</Link>
+                            <div className="flex flex-col gap-1 text-xl font-semibold pl-3 mt-0 lg:mt-10">
+                                <Link to="/" className="hover:text-green-400 hover:line-through">Women</Link>
+                                <Link to="/" className="hover:text-green-400 hover:line-through">Men</Link>
+                                <Link to="/" className="hover:text-green-400 hover:line-through">Kids</Link>
+                                <Link to="/" className="hover:text-green-400 hover:line-through">Home Deco</Link>
+                                <Link to="/" className="hover:text-green-400 hover:line-through">Contact</Link>
                             </div>
                         </div>
 

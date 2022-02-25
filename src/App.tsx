@@ -6,10 +6,13 @@ import { SideMenu } from './Components/SideMenu';
 import { useClickOutside } from './Hooks/useClickOutside';
 import { Homepage } from './Pages/Index';
 
-const mountedStyle = { backgroundColor: '#000000a1', animation: "inAnimation 250ms ease-in" };
+const mountedStyle = {
+  backgroundColor: '#000000a1',
+  animation: "inAnimation 250ms ease-in"
+};
 const unmountedStyle = {
   animation: "outAnimation 270ms ease-out",
-  animationFillMode: "forwards"
+  animationFillMode: 'forwards'
 };
 
 function App() {
@@ -20,7 +23,7 @@ function App() {
   return (
     <div className="app min-h-screen h-full relative">
       <Navigation showSideMenu={() => setShowSideMenu(true)} />
-      <div id="sidemenu" ref={ref} style={showSideMenu ? mountedStyle : unmountedStyle} className={'sidebar w-full min-h-screen absolute h-full top-0'}>
+      <div id="sidemenu" style={showSideMenu ? mountedStyle : unmountedStyle} ref={ref} className={'sidebar w-full min-h-screen h-full top-0 fixed overflow-x-hidden'}>
         <SideMenu isOpen={showSideMenu} closeSideMenu={() => setShowSideMenu(false)} />
       </div>
       <Routes>
